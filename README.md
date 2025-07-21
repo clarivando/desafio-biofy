@@ -44,7 +44,7 @@ A API processa o conteúdo do contrato usando **Inteligência Artificial (Groq A
 
 1. **Clone o repositório**
    ```bash
-   git clone https://github.com/seu-usuario/contract-analyzer.git
+   git clone [https://github.com/seu-usuario/contract-analyzer.git](https://github.com/clarivando/desafio-biofy.git)
    cd contract-analyzer
    ```
 
