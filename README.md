@@ -44,8 +44,8 @@ A API processa o conteúdo do contrato usando **Inteligência Artificial (Groq A
 
 1. **Clone o repositório**
    ```bash
-   git clone [https://github.com/seu-usuario/contract-analyzer.git](https://github.com/clarivando/desafio-biofy.git)
-   cd contract-analyzer
+   git clone https://github.com/clarivando/desafio-biofy.git
+   cd desafio-biofy
    ```
 
 2. **Crie e ative o ambiente virtual**
@@ -60,7 +60,7 @@ A API processa o conteúdo do contrato usando **Inteligência Artificial (Groq A
    pip install -r requirements.txt
    ```
 
-4. **Configure o arquivo .env**
+4. **Crie e configure o arquivo .env dentro de contract_analyzer**
    #### 4.1 JWT configs
    - SECRET_KEY=sua-chave-jwt
    - ALGORITHM=HS256
@@ -75,17 +75,31 @@ A API processa o conteúdo do contrato usando **Inteligência Artificial (Groq A
 
 5. **Inicie o servidor**
    ```bash
+   cd contract_analyzer
    uvicorn app.main:app --reload
    ```
 
 6. **Acesse a documentação interativa:**
    [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+   - Cadastre um novo usuário na rota POST /users/register. Veja o exemplo:
+   ```
+    {
+      "username": "clarivando",
+      "full_name": "Clarivando Francisco",
+      "email": "clarivando@ufu.br",
+      "password": "123456"
+    }
+   ```
+   - Em seguida, faça login (POST /login) para obter o token de acesso às rotas.
 
 ---
 
 ## Acesso à Interface Web
 
 A aplicação conta com uma **interface web** para facilitar o uso da API:  
+
+![Exemplo de Interface](tela_principal_interface.png)
+
 
 1. **Abrir a interface**
    - Navegue até a pasta `frontend_contract_analyzer`.
@@ -95,7 +109,7 @@ A aplicação conta com uma **interface web** para facilitar o uso da API:
 2. **Tela de Login**
    - Ao abrir, você será direcionado para a tela de login.
    - **Opções de acesso:**
-     - **Usuário de teste (pré-cadastrado):**
+     - **Usuário de teste (se já estiver cadastrado):**
        ```
        Email: clarivando@ufu.br
        Senha: 123456
